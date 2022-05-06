@@ -1,0 +1,27 @@
+body{
+margin: 0;
+font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+body{
+background-color: rgb(41, 97, 66);
+font-size: 30px;
+}
+
+.header{
+text-align: center;
+}
+.header_content{
+display: flex;
+font-size: 30px;
+}
+
+.annotation{
+color: red;
+}
+.content{
+display: flex;
+}
+a{
+color:rgb(206, 81, 102);
+}
