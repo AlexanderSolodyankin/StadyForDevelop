@@ -8,11 +8,11 @@ import org.springframework.web.bind.annotation.GetMapping;
 public class MainController {
     @GetMapping("/")
     public String menu (Model model){
-        model.addAttribute("main", "Нчало работы");
+        model.addAttribute("main", "Начало работы");
         return "main";
     }
     @GetMapping("/begin")
     public String begin(Model model){
-        return "begin/begin_stady";
+        return "begin/begin_studies";
     }
 }

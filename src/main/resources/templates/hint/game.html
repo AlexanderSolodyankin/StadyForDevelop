@@ -1,0 +1,53 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+      xsi:schemaLocation="http://www.thymeleaf.org ">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+    <title th:text="${game.getQuestName}"></title>
+<!--    <title>Игра</title>-->
+    <link rel="stylesheet" th:href="@{../style/style.css}">
+</head>
+<body>
+
+<h1 th:text = "${game.getQuestName}"/>
+
+<p th:text="${game.getDescription}"/>
+<br>
+<dev class="content">
+    <dev>
+<span th:each="brech1 : ${game.getBrich1}" >
+    <p th:text="${brech1}"/>
+</span>
+    </dev>
+
+    <dev>
+<span th:each="boat : ${game.getBoat}">
+    <p th:text="${boat}"/>
+</span>
+    </dev>
+
+    <dev>
+        <span th:each="brech2 : ${game.getBrich2}">
+            <p th:text="${brech2}"/>
+        </span>
+    </dev>
+</dev>
+
+<p th:text="${game.getAction}"/>
+
+<!--<form action="game/shepherd_game" method="post">-->
+<!--    <input type="hidden" name="game" th:value="game">-->
+<!--    <input type="submit" value="отправить">-->
+
+<!--</form>-->
+<form th:action="@{/game/shepherd_game}" th:object="${game}" th:method="POST">
+
+    <div th:each="action : ${game.getBrich1}">
+        <input type="submit" name="test" th:value="${action}">
+    </div>
+
+
+</form>
+
+</body>
+</html>
