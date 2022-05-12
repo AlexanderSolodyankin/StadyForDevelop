@@ -35,11 +35,6 @@
 
 <p th:text="${game.getAction}"/>
 
-<!--<form action="game/shepherd_game" method="post">-->
-<!--    <input type="hidden" name="game" th:value="game">-->
-<!--    <input type="submit" value="отправить">-->
-
-<!--</form>-->
 <form th:action="@{/game/shepherd_game}" th:object="${game}" th:method="POST">
 
     <div th:each="action : ${game.getBrich1}">
