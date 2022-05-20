@@ -25,3 +25,10 @@ display: flex;
 a{
 color:rgb(206, 81, 102);
 }
+.footer{
+width: 100px;
+height:100px;
+}
+div{
+padding: 50px;
+}

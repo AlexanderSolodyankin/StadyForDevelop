@@ -4,45 +4,53 @@
 <head>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
     <title th:text="${game.getQuestName}"></title>
-<!--    <title>Игра</title>-->
     <link rel="stylesheet" th:href="@{../style/style.css}">
+    <link rel="stylesheet" th:href="@{../style/game_style.css}">
 </head>
 <body>
-
-<h1 th:text = "${game.getQuestName}"/>
-
+<h1 th:text="${game.getQuestName}"/>
 <p th:text="${game.getDescription}"/>
 <br>
-<dev class="content">
-    <dev>
-<span th:each="brech1 : ${game.getBrich1}" >
-    <p th:text="${brech1}"/>
-</span>
-    </dev>
-
-    <dev>
-<span th:each="boat : ${game.getBoat}">
-    <p th:text="${boat}"/>
-</span>
-    </dev>
-
-    <dev>
-        <span th:each="brech2 : ${game.getBrich2}">
-            <p th:text="${brech2}"/>
-        </span>
-    </dev>
-</dev>
-
-<p th:text="${game.getAction}"/>
-
-<form th:action="@{/game/shepherd_game}" th:object="${game}" th:method="POST">
-
-    <div th:each="action : ${game.getBrich1}">
-        <input type="submit" name="test" th:value="${action}">
+<div class="games">
+    <div class="gameDisplay">
+        <div class="gameDisplay_column">
+            <div class="gameDisplay_item" th:each="shore1 : ${game.getShore1}">
+                <p th:text="${shore1}"/>
+            </div>
+        </div>
+        <div class="gameDisplay_column">
+            <div class="gameDisplay_item" th:each="boat : ${game.getBoat}">
+                <p th:text="${boat}"/>
+            </div>
+        </div>
+        <div class="gameDisplay_column">
+            <div class="gameDisplay_item" th:each="shore2 : ${game.getShore2}">
+                <p th:text="${shore2}"/>
+            </div>
+        </div>
     </div>
-
-
+</div>
+<p th:text="${game.getAction}"/>
+<form th:action="@{/game/shepherd_game}" th:object="${game}" th:method="POST">
+    <input type="hidden" th:field="*{questName}" th:value="${game.getQuestName}" id="questName">
+    <input type="hidden" th:field="*{description}" th:value="${game.getDescription}" id="description">
+    <input type="hidden" th:field="*{step}" th:value="${game.getStep}" id="step">
+    <input type="hidden" th:field="*{shorePoint}" th:value="${game.getShorePoint}" id="shorePoint">
+    <input type="hidden" th:field="*{shore1}" th:value="${game.getShore1}" id="shore1">
+    <input type="hidden" th:field="*{shore2}" th:value="${game.getShore2}" id="shore2">
+    <input type="hidden" th:field="*{shoreActive}" th:value="${game.getShoreActive}" id="shoreActive">
+    <input type="hidden" th:field="*{boat}" th:value="${game.getBoat}" id="boat">
+    <input type="hidden" th:field="*{status}" th:value="${game.isStatus}" id="status">
+    <input type="hidden" th:field="*{failure}" th:value="${game.isFailure}" id="failure">
+    <input type="hidden" th:field="*{action}" th:value="${game.getAction}" id="action">
+    <div class="games">
+        <div class="gameDisplay">
+            <div class="gameDisplay_column" th:each="action : ${game.getShoreActive}">
+                <input type="submit" name="test" th:value="${action}">
+            </div>
+        </div>
+    </div>
 </form>
-
+<div class="footer"/>
 </body>
 </html>

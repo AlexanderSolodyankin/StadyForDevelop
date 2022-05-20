@@ -1,42 +1,87 @@
 package com.home_project.programmer.s.cheat.sheet.model.hint;
 
-import lombok.Data;
 
-@Data
 public class ShepherdGame extends Hints {
     private int step;
-    private String[] brich1 = new String[4];
-    private String[] brich2 = new String[4];
-    private String[] boat = new String[2];
-    private boolean status = false;
-    private boolean failure = false;
+    private int shorePoint;
+    private String[] shore1;
+    private String[] shore2;
+    private String[] shoreActive;
+    private String[] boat;
+    private boolean status;
+    private boolean failure;
     private String action;
 
 
-
-    public ShepherdGame() {
-        setQuestName("Пастух");
-        setDescription("Стоит пастух, коза, капуста и волк. Перед ними река и одна лодка в которой только два места." +
-                "\n Пастуху нужно переправить волка козу и капусту на другой берег. Но если оставить козу с волком то волк съест козу," +
-                " или если оставить козу и капусту то коза съест капусту как пастуху переправить всех через реку? (Подсказка: Лодка без пастуха не плывет!!!");
-
-        this.step = 0;
-
-        this.brich1[0] = "Пастух";
-        this.brich1[1] = "Коза";
-        this.brich1[2] = "Волк";
-        this.brich1[3] = "Капуста";
-
-        this.boat[0] = "Пусто";
-        this.boat[1] = "Пусто";
-
-        this.brich2[0] = "Пусто";
-        this.brich2[1] = "Пусто";
-        this.brich2[2] = "Пусто";
-        this.brich2[3] = "Пусто";
-
-        this.action = "Кого вы посадите в лодку?";
+    public int getStep() {
+        return step;
     }
 
+    public void setStep(int step) {
+        this.step = step;
+    }
 
+    public int getShorePoint() {
+        return shorePoint;
+    }
+
+    public void setShorePoint(int shorePoint) {
+        this.shorePoint = shorePoint;
+    }
+
+    public String[] getShore1() {
+        return shore1;
+    }
+
+    public void setShore1(String[] shore1) {
+        this.shore1 = shore1;
+    }
+
+    public String[] getShore2() {
+        return shore2;
+    }
+
+    public void setShore2(String[] shore2) {
+        this.shore2 = shore2;
+    }
+
+    public String[] getShoreActive() {
+        return shoreActive;
+    }
+
+    public void setShoreActive(String[] shoreActive) {
+        this.shoreActive = shoreActive;
+    }
+
+    public String[] getBoat() {
+        return boat;
+    }
+
+    public void setBoat(String[] boat) {
+        this.boat = boat;
+    }
+
+    public boolean isStatus() {
+        return status;
+    }
+
+    public void setStatus(boolean status) {
+        this.status = status;
+    }
+
+    public boolean isFailure() {
+        return failure;
+    }
+
+    public void setFailure(boolean failure) {
+        this.failure = failure;
+    }
+
+    public String getAction() {
+        return action;
+    }
+
+    public void setAction(String action) {
+        this.action = action;
+    }
 }

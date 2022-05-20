@@ -1,0 +1,22 @@
+.games{
+
+
+}
+.gameDisplay{
+display: flex;
+<!--border: 5px solid #ece89d; /* толщина рамок и цвет рамок */-->
+<!--margin: 0px 0px 5px 0px; /* размер флекс блока */-->
+}
+.gameDisplay_column{
+border: 50px solid rgba(0,0,0,0.0); /* толщина рамок  и цвет рамки*/
+}
+.gameDisplay_item{
+background-color: #18b5a4; /* задний фон элемента  */
+<!--padding: 10px; /* толщина рамок */-->
+font-size: 50px;  /* размер текста в элементе */
+color:#fff; /* цвет эемента  */
+<!--font-weight: 120; /* Насыщенность текста  */-->
+}
+input{
+font-size: 50px;
+}
