@@ -1,0 +1,16 @@
+.Header{
+   display: flex;
+   // justify-content: space-between;
+   background-image: url(./media/img/Backgraund_fon.jpg);
+   background-size:cover;
+   background-repeat: no-repeat;
+   background-position: 50%;
+
+   // padding: 10px;
+
+   h1{
+      text-align: center;
+      color:  hwb(75deg 12% 43%);
+      // padding-top: 10px;
+   }
+}

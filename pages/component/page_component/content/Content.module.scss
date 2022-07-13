@@ -1,0 +1,12 @@
+.Content{
+    background-color: yellow;
+
+    h1{
+        text-align: center;
+    }
+
+    .Panels{
+        display: flex;
+        justify-content: space-between;
+    }
+}
